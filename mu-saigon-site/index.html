@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MU Sài Gòn - Máy chủ giải trí Season 2.2 với trải nghiệm hoài niệm, sự kiện hấp dẫn và cộng đồng thân thiện." />
+  <title>MU SÀI GÒN | Season 2.2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+  <div class="nebula"></div>
+  <button class="alert-chip" data-open-modal="warningModal">
+    ⚠️ Cảnh Báo Lừa Đảo
+  </button>
+
+  <div class="layout-grid">
+    <aside class="floating-panel" data-follow-cursor data-speed="0.02">
+      <div class="glass-card">
+        <p class="panel-label">MỤC LỤC GAME</p>
+        <h3>Khám phá máy chủ</h3>
+        <div id="gameMenu" class="game-menu"></div>
+        <div id="gamePanelContent" class="game-panel-placeholder">
+          <p>Chọn một mục để xem chi tiết cấu hình máy chủ, sự kiện và hướng dẫn.</p>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="hero">
+        <p class="server-tag">Máy Chủ: <span>Trở về</span></p>
+        <h1>MU SÀI GÒN</h1>
+        <p class="season">Season <strong>2.2</strong></p>
+        <div class="phase-chips">
+          <span class="chip">Alpha Test</span>
+          <span class="chip">Open Beta</span>
+        </div>
+        <p class="hero-subtitle">Gamemode đỏ rực, hiệu ứng sáng chói chuyển trắng tái hiện đúng cảm giác MU Online thuở hoàng kim.</p>
+        <div class="cta-group">
+          <button class="cta" data-open-modal="downloadModal">Nút tải game</button>
+          <button class="cta" data-open-modal="registerModal">Nút đăng ký</button>
+        </div>
+      </header>
+
+      <section class="section intro">
+        <h2>MU SÀI GÒN - Server phi thương mại</h2>
+        <p>
+          Giải trí dễ kiếm đồ, ngọc – Hoài niệm những buổi cày xuyên đêm cùng anh em.
+          Bộc lộ khả năng PK đỉnh cao trong môi trường cân bằng, admin uy tín không can thiệp.
+        </p>
+      </section>
+
+      <section class="section" id="announcements">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Thông báo Ingame</p>
+            <h2>Cập nhật nóng từng ngày</h2>
+          </div>
+          <div class="section-actions">
+            <button class="pill" id="prevAnnouncements">◀</button>
+            <span id="announcementPage">1/1</span>
+            <button class="pill" id="nextAnnouncements">▶</button>
+          </div>
+        </div>
+        <div id="announcementList" class="card-grid"></div>
+      </section>
+
+      <section class="section" id="leaderboards">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Đua Top</p>
+            <h2>Vinh danh chiến binh</h2>
+          </div>
+          <p class="helper-text">Chạm để xem chi tiết giải thưởng từng cuộc đua.</p>
+        </div>
+        <div id="leaderboardList" class="leaderboard-grid"></div>
+      </section>
+
+      <section class="section media" id="activities">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Video hoạt động</p>
+            <h2>Không khí máy chủ</h2>
+          </div>
+          <button class="pill accent">Xem toàn bộ video</button>
+        </div>
+        <div class="media-carousel" data-carousel="activity">
+          <button class="carousel-control" data-carousel-control data-target="activity" data-direction="prev">‹</button>
+          <div class="media-track" data-carousel-track="activity"></div>
+          <button class="carousel-control" data-carousel-control data-target="activity" data-direction="next">›</button>
+        </div>
+      </section>
+
+      <section class="section media" id="nostalgia">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Video + ảnh hoài niệm</p>
+            <h2>Dòng thời gian ký ức</h2>
+          </div>
+          <button class="pill accent">Xem toàn bộ hoài niệm</button>
+        </div>
+        <div class="media-carousel" data-carousel="nostalgia">
+          <button class="carousel-control" data-carousel-control data-target="nostalgia" data-direction="prev">‹</button>
+          <div class="media-track" data-carousel-track="nostalgia"></div>
+          <button class="carousel-control" data-carousel-control data-target="nostalgia" data-direction="next">›</button>
+        </div>
+      </section>
+    </main>
+
+    <aside class="floating-panel" data-follow-cursor data-speed="0.015">
+      <div class="glass-card">
+        <p class="panel-label">Liên kết cộng đồng</p>
+        <h3>Kết nối nhanh</h3>
+        <ul class="community-links">
+          <li>
+            <a href="https://zalo.me" target="_blank" rel="noreferrer">
+              <span>Nhóm ZALO</span>
+              <small>Thông báo & hỗ trợ 24/7</small>
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <span>Fanpage Facebook</span>
+              <small>Livestream sự kiện</small>
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.com" target="_blank" rel="noreferrer">
+              <span>Discord</span>
+              <small>Voice chat & party finder</small>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="modal" id="downloadModal" aria-hidden="true">
+    <div class="modal__content">
+      <button class="modal__close" data-close-modal>&times;</button>
+      <h3>Tải Game MU SÀI GÒN</h3>
+      <p>Chọn đường dẫn phù hợp với tốc độ mạng của bạn.</p>
+      <div class="download-links">
+        <a href="#" class="download-card">Mega</a>
+        <a href="#" class="download-card">Link trực tiếp I</a>
+        <a href="#" class="download-card">Link trực tiếp II</a>
+      </div>
+      <p class="helper-text">Hãy kiểm tra file trước khi giải nén và cập nhật đầy đủ patch.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="registerModal" aria-hidden="true">
+    <div class="modal__content">
+      <button class="modal__close" data-close-modal>&times;</button>
+      <h3>Đăng ký tài khoản</h3>
+      <div class="register-body">
+        <img src="https://via.placeholder.com/560x260?text=Huong+dan+dang+ky" alt="Hướng dẫn đăng ký" />
+        <ol>
+          <li>Chuẩn bị email và mật khẩu mạnh.</li>
+          <li>Đăng nhập trang quản lý để kích hoạt bảo mật.</li>
+          <li>Xác minh thông tin trong game trước khi tham gia sự kiện.</li>
+        </ol>
+        <a href="#" class="cta full">Click vào trang đăng ký</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="warningModal" aria-hidden="true">
+    <div class="modal__content">
+      <button class="modal__close" data-close-modal>&times;</button>
+      <h3>Cảnh Báo Lừa Đảo</h3>
+      <p>Admin không chủ động tạo nhóm Zalo riêng hay inb xin thông tin.</p>
+      <ul class="warning-list">
+        <li>Không giao dịch trung gian ngoài game, ưu tiên trực tiếp trong game.</li>
+        <li>Luôn xem đồ trước, nhận đồ xong mới chuyển khoản.</li>
+        <li>Liên hệ chủ nhóm Zalo hoặc admin để nhận trung gian miễn phí.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="leaderboardModal" aria-hidden="true">
+    <div class="modal__content">
+      <button class="modal__close" data-close-modal>&times;</button>
+      <h3 id="leaderboardModalTitle"></h3>
+      <p id="leaderboardModalDesc"></p>
+      <ul id="leaderboardModalRewards" class="reward-list"></ul>
+    </div>
+  </div>
+</body>
+</html>
